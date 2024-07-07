@@ -33,13 +33,13 @@ LDFLAGS	=	-g $(MACHDEP) -Wl,-Map,$(notdir $@).map
 #---------------------------------------------------------------------------------
 # any extra libraries we wish to link with the project
 #---------------------------------------------------------------------------------
-LIBS	:=	-lwiiuse -lbte -logc -lm
+LIBS	:=	-lwiiuse -lasnd -lvorbisidec -logg -lbte -logc -lm
 
 #---------------------------------------------------------------------------------
 # list of directories containing libraries, this must be the top level containing
 # include and lib
 #---------------------------------------------------------------------------------
-LIBDIRS	:=
+LIBDIRS	:= $(PORTLIBS)
 
 #---------------------------------------------------------------------------------
 # no real need to edit anything past this point unless you need to add additional
@@ -124,9 +124,9 @@ $(OUTPUT).elf: $(OFILES)
 $(OFILES_SOURCES) : $(HFILES)
 
 #---------------------------------------------------------------------------------
-# This rule links in binary data with the .jpg extension
+# This rule links in binary data with the .ogg extension
 #---------------------------------------------------------------------------------
-%.jpg.o	%_jpg.h :	%.jpg
+%.ogg.o	%_ogg.h :	%.ogg
 #---------------------------------------------------------------------------------
 	@echo $(notdir $<)
 	$(bin2o)

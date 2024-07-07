@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<app version="1">
-	<name>BetterPii</name>
-	<version>1.0.0</version>
-	<release_date>20240705000000</release_date>
-	<coder>Dakotath</coder>
-	<short_description>Calculates Pi.</short_description>
-	<long_description>Calculate as many freakin digits of pi as your memory lets you.</long_description>
-</app>
